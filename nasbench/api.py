@@ -142,11 +142,11 @@ class NASBench(object):
     # Valid queriable epoch lengths. {4, 12, 36, 108} for the full dataset or
     # {108} for the smaller dataset with only the 108 epochs.
     self.valid_epochs = set()
-
-    for serialized_row in tf.python_io.tf_record_iterator(dataset_file):
+    
+    for serialized_row in tf.data.TFRecordDataset(dataset_file):
       # Parse the data from the data file.
       module_hash, epochs, raw_adjacency, raw_operations, raw_metrics = (
-          json.loads(serialized_row.decode('utf-8')))
+          json.loads(serialized_row.numpy().decode('utf-8')))
 
       dim = int(np.sqrt(len(raw_adjacency)))
       adjacency = np.array([int(e) for e in list(raw_adjacency)], dtype=np.int8)
