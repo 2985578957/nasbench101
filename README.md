@@ -75,6 +75,12 @@ install anything on your local machine. Click "Open in Colab" below:
 
 ## Setup
 
+### ADD ONLY IN THIS REPO ()
+```
+pip install git+https://github.com/2985578957/nasbench101.git
+```
+
+### Use the official way (you may need install tensorflow-1.x)
 1.  Clone this repo.
 
 ```
