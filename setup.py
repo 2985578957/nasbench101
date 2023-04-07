@@ -24,6 +24,6 @@ setuptools.setup(
     version='1.0',
     packages=setuptools.find_packages(),
     install_requires=[
-        'tensorflow>=2.3.0',
+        'tensorflow==2.11.0',
     ]
 )
